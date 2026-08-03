@@ -1,0 +1,27 @@
+{
+  "fileKey": "dSsS4Xy7WwHyRXsaA3bdo0",
+  "source": "https://www.figma.com/design/dSsS4Xy7WwHyRXsaA3bdo0/Interactive-Portfolio-Website--Figma-UI-Design-Tutorial-for-Beginners-%7C-Step-by-Step-Guide--Community-?node-id=3-2",
+  "assets": [
+    { "id": "3:4", "name": "hero-bg", "format": "jpg", "scale": 1 },
+    { "id": "4:2", "name": "logo-plant", "format": "png", "scale": 2 },
+    { "id": "3:9", "name": "icon-search", "format": "png", "scale": 2 },
+    { "id": "4:11", "name": "icon-bag", "format": "png", "scale": 2 },
+    { "id": "6:53", "name": "icon-arrow-right", "format": "png", "scale": 2 },
+    { "id": "13:164", "name": "icon-arrow-left", "format": "png", "scale": 2 },
+    { "id": "5:25", "name": "plant-hero", "format": "png", "scale": 2 },
+    { "id": "8:2", "name": "avatar-alena", "format": "jpg", "scale": 2 },
+    { "id": "10:4", "name": "plant-trendy-1", "format": "png", "scale": 2 },
+    { "id": "10:7", "name": "plant-trendy-2", "format": "png", "scale": 2 },
+    { "id": "8:22", "name": "plant-top-1", "format": "png", "scale": 2 },
+    { "id": "8:37", "name": "plant-top-2", "format": "png", "scale": 2 },
+    { "id": "8:49", "name": "plant-top-3", "format": "png", "scale": 2 },
+    { "id": "12:33", "name": "plant-top-4", "format": "png", "scale": 2 },
+    { "id": "12:45", "name": "plant-top-5", "format": "png", "scale": 2 },
+    { "id": "12:57", "name": "plant-top-6", "format": "png", "scale": 2 },
+    { "id": "12:72", "name": "plant-best-o2", "format": "png", "scale": 2 },
+    { "id": "13:88", "name": "avatar-maxn", "format": "jpg", "scale": 2 },
+    { "id": "13:110", "name": "avatar-venely", "format": "jpg", "scale": 2 },
+    { "id": "13:121", "name": "avatar-lii", "format": "jpg", "scale": 2 },
+    { "id": "13:139", "name": "logo-plant-footer", "format": "png", "scale": 2 }
+  ]
+}

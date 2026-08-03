@@ -1,0 +1,233 @@
+.trendy {
+  position: relative;
+  z-index: 1;
+  margin-top: -1rem;
+}
+
+.trendy-list {
+  display: grid;
+  gap: 8.5rem;
+  padding-top: 5.5rem;
+}
+
+.trendy-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  width: min(100%, 1400px);
+  height: 420px;
+  min-height: 360px;
+  margin-inline: auto;
+  padding: 1.75rem 5rem 1.75rem 1.5rem;
+  border-radius: 111px;
+  overflow: visible;
+}
+
+.trendy-card.glass {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.trendy-card.is-reverse {
+  grid-template-columns: 1.1fr minmax(280px, 0.9fr);
+  padding: 1.75rem 1.5rem 1.75rem 5rem;
+}
+
+.trendy-card.is-reverse .trendy-media {
+  order: 2;
+}
+
+.trendy-card.is-reverse .trendy-body {
+  order: 1;
+}
+
+.trendy-media {
+  position: relative;
+  z-index: 5;
+  align-self: stretch;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.trendy-media img {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5rem;
+  width: min(100%, 460px);
+  height: 660px;
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%);
+  transition: transform 0.45s ease;
+}
+
+.trendy-card:hover .trendy-media img {
+  transform: translateX(-50%) translateY(-10px) scale(1.02);
+}
+
+.trendy-body {
+  position: relative;
+  z-index: 4;
+  max-width: 36rem;
+  text-align: left;
+  justify-self: start;
+}
+
+.trendy-body h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+}
+
+.trendy-body p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
+.trendy-body strong {
+  display: block;
+  margin-bottom: 1.15rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.trendy-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.85rem;
+}
+
+@media (max-width: 1100px) {
+  .trendy-list {
+    gap: 6rem;
+    padding-top: 3.5rem;
+  }
+
+  .trendy-card,
+  .trendy-card.is-reverse {
+    height: auto;
+    min-height: 0;
+    border-radius: clamp(40px, 7vw, 80px);
+    padding: 1.5rem 2.5rem;
+    grid-template-columns: minmax(160px, 0.8fr) 1.2fr;
+    align-items: center;
+  }
+
+  .trendy-media {
+    position: relative;
+    min-height: 200px;
+    height: 200px;
+    align-self: stretch;
+    overflow: visible;
+  }
+
+  .trendy-media img {
+    width: min(100%, 240px);
+    height: 300px;
+    bottom: 0;
+  }
+
+  .trendy-body {
+    z-index: 4;
+  }
+}
+
+@media (max-width: 900px) {
+  .trendy-list {
+    gap: 5.5rem;
+    padding-top: 3.25rem;
+  }
+
+  .trendy-card,
+  .trendy-card.is-reverse {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    border-radius: 36px;
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .trendy-card.is-reverse .trendy-media,
+  .trendy-card.is-reverse .trendy-body {
+    order: initial;
+  }
+
+  .trendy-media {
+    height: 150px;
+    min-height: 150px;
+    margin-top: -2.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .trendy-media img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: min(62%, 200px);
+    height: 260px;
+    transform: translateX(-50%);
+  }
+
+  .trendy-card:hover .trendy-media img {
+    transform: translateX(-50%) translateY(-6px) scale(1.02);
+  }
+
+  .trendy-body {
+    position: relative;
+    z-index: 4;
+  }
+
+  .trendy-body h3 {
+    font-size: clamp(1.25rem, 5vw, 1.55rem);
+  }
+
+  .trendy-body p {
+    font-size: 0.95rem;
+  }
+
+  .trendy-body strong {
+    font-size: 1.4rem;
+  }
+
+  .trendy-actions .btn {
+    min-height: 48px;
+    padding: 0 1.15rem;
+    font-size: 0.95rem;
+  }
+
+  .trendy-actions .btn-icon {
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trendy-list {
+    gap: 4.75rem;
+    padding-top: 2.75rem;
+  }
+
+  .trendy-media {
+    height: 130px;
+    min-height: 130px;
+    margin-top: -2.25rem;
+  }
+
+  .trendy-media img {
+    width: min(60%, 170px);
+    height: 230px;
+  }
+}

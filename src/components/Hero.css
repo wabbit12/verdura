@@ -1,0 +1,421 @@
+.top-scene {
+  position: relative;
+  margin-top: calc(var(--nav-h) * -1);
+  isolation: isolate;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 920px;
+  padding: var(--nav-h) 0 0;
+  overflow: visible;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  filter: saturate(1.06) brightness(0.7);
+}
+
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(16, 21, 16, 0.32) 0%,
+      rgba(16, 21, 16, 0.16) 22%,
+      rgba(16, 21, 16, 0.2) 55%,
+      rgba(26, 33, 28, 0.55) 82%,
+      var(--bg) 100%
+    ),
+    radial-gradient(
+      ellipse 50% 42% at 50% 28%,
+      rgba(70, 110, 60, 0.14),
+      transparent 72%
+    );
+}
+
+.hero-stage {
+  position: relative;
+  min-height: 880px;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 42rem;
+  padding-top: 2.5rem;
+}
+
+.hero-copy h1 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(3.4rem, 6.4vw, 5.75rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.hero-copy > p {
+  margin: 0 0 2rem;
+  max-width: 40rem;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  flex-wrap: wrap;
+}
+
+.live-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 500;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.live-demo:hover {
+  opacity: 1;
+}
+
+.play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  display: grid;
+  place-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.play::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 15px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 3px;
+}
+
+.hero-card.glass {
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+  z-index: 3;
+  width: min(34%, 512px);
+  height: 644px;
+  min-height: 644px;
+  border-radius: var(--radius-card, 42px);
+  padding: 0 2.25rem 2.25rem;
+  background: var(--glass);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: visible;
+}
+
+.hero-plant-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: visible;
+  animation: float 5.5s ease-in-out infinite;
+}
+
+.hero-plant {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12.5rem;
+  width: min(88%, 400px);
+  height: 560px;
+  margin-inline: auto;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.hero-card-body {
+  position: relative;
+  z-index: 4;
+  padding-top: 12rem;
+  padding-bottom: 0.35rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.hero-card-body h3 {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.hero-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-buy {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+}
+
+.hero-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.dot.active {
+  width: 18px;
+  background: #fff;
+}
+
+.hero-next {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  line-height: 1;
+  padding-bottom: 2px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-next:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  transform: translateX(2px);
+}
+
+.hero-next:active {
+  transform: translateX(0);
+}
+
+.review-snip.glass {
+  position: absolute;
+  left: 0;
+  bottom: 4.5rem;
+  z-index: 2;
+  width: min(100%, 400px);
+  border-radius: var(--radius-card, 42px);
+  padding: 1.35rem 1.5rem 1.45rem;
+  background: var(--glass);
+}
+
+.review-snip-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.review-snip-head img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.review-snip-head strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.review-snip p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-stage {
+    min-height: 0;
+    display: grid;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-copy {
+    padding-top: 1rem;
+    max-width: none;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 8vw, 4rem);
+  }
+
+  .hero-card.glass,
+  .review-snip.glass {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+  }
+
+  .hero-card.glass {
+    width: min(100%, 420px);
+    max-width: 420px;
+    height: auto;
+    min-height: 0;
+    margin-inline: auto;
+    margin-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 1.75rem 1.5rem;
+  }
+
+  .hero-plant-wrap {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 210px;
+    flex-shrink: 0;
+    margin-top: -4.5rem;
+    margin-bottom: 0.75rem;
+    animation: none;
+  }
+
+  .hero-plant {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: min(70%, 260px);
+    height: 340px;
+    margin-inline: auto;
+  }
+
+  .hero-card-body {
+    padding-top: 0;
+    z-index: 4;
+  }
+
+  .review-snip.glass {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-stage {
+    padding-top: 1.5rem;
+    gap: 2rem;
+  }
+
+  .hero-card.glass {
+    width: 100%;
+    max-width: none;
+    margin-top: 3.75rem;
+    padding: 0 1.15rem 1.25rem;
+    border-radius: 28px;
+  }
+
+  .hero-plant-wrap {
+    height: 180px;
+    margin-top: -3.75rem;
+  }
+
+  .hero-plant {
+    width: min(68%, 210px);
+    height: 280px;
+  }
+
+  .hero-buy {
+    min-height: 48px;
+    font-size: 0.95rem;
+  }
+
+  .play {
+    width: 52px;
+    height: 52px;
+  }
+
+  .review-snip.glass {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .review-snip-head img {
+    width: 52px;
+    height: 52px;
+  }
+}
