@@ -46,7 +46,7 @@ export const heroCarousel: Plant[] = [
   },
   {
     id: "hero-strelitzia",
-    name: "Bird of Paradise",
+    name: "Pot Cactus",
     description: "Statement House Plant",
     price: 59,
     image: assets.plant3,
@@ -65,7 +65,7 @@ export const trendyPlants: Plant[] = [
   },
   {
     id: "trendy-2",
-    name: "Bird of Paradise Mini",
+    name: "Pot Cactus",
     description:
       "Tall, architectural leaves in a clean white bowl. Brings tropical structure to sunny rooms and entryways.",
     price: 39,

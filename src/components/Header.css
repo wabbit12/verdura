@@ -89,11 +89,12 @@
   transform: rotate(180deg);
 }
 
-.dropdown {
+/* Beat .glass { position: relative } so the menu overlays instead of shifting nav */
+.dropdown.glass {
   position: absolute;
   top: calc(100% + 0.75rem);
   left: 50%;
-  transform: translateX(-50%);
+  z-index: 50;
   min-width: 190px;
   margin: 0;
   padding: 0.6rem;
@@ -172,7 +173,7 @@
   border-radius: 2px;
 }
 
-.mobile-menu {
+.mobile-menu.glass {
   display: flex;
   position: absolute;
   inset: var(--nav-h) 1rem auto;

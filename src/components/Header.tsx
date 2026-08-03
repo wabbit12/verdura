@@ -68,9 +68,9 @@ export function Header({ onSearch }: HeaderProps) {
               {typesOpen && (
                 <motion.ul
                   className="dropdown glass"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 8, x: "-50%" }}
+                  animate={{ opacity: 1, y: 0, x: "-50%" }}
+                  exit={{ opacity: 0, y: 8, x: "-50%" }}
                   transition={{ duration: 0.2 }}
                 >
                   {plantTypes.map((type) => (
