@@ -112,6 +112,10 @@
   transform: translateY(-2px);
 }
 
+.product-pager {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -162,15 +166,40 @@
 }
 
 @media (max-width: 680px) {
+  .top-selling .container {
+    width: 100%;
+    max-width: none;
+    padding-inline: 1.25rem;
+    box-sizing: border-box;
+  }
+
+  .top-selling .section-title {
+    padding-inline: 0;
+  }
+
   .product-grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
-    margin-inline: auto;
-    gap: 4.5rem;
-    padding-top: 3rem;
+    display: flex;
+    grid-template-columns: none;
+    gap: 1rem;
+    max-width: none;
+    margin-inline: -1.25rem;
+    padding: 2.75rem 1.25rem 1.25rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .product-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .product-card {
+    flex: 0 0 min(78vw, 300px);
+    scroll-snap-align: center;
     padding: 0 1.15rem 1.15rem;
   }
 
@@ -195,6 +224,10 @@
 
   .product-body p {
     font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .product-foot strong {
@@ -204,5 +237,58 @@
   .bag-square {
     width: 46px;
     height: 46px;
+  }
+
+  .product-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .product-pager .pager-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #fff;
+    transition:
+      background 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .product-pager .pager-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .product-pager .pager-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .product-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .product-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    transition:
+      width 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .product-dot.active {
+    width: 22px;
+    background: rgba(255, 255, 255, 0.85);
   }
 }
