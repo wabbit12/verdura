@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { assets, heroCarousel } from "../data/content";
 import { useCart } from "../hooks/useCart";
 import { Stars } from "./Icons";
+import { plantImgAttrs, plantSizes } from "./PlantImage";
 import "./Hero.css";
 
 export function Hero() {
@@ -16,7 +17,20 @@ export function Hero() {
   return (
     <>
       <div className="hero-bg" aria-hidden="true">
-        <img src={assets.heroBg} alt="" />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={assets.heroBgSrcSet}
+            sizes="100vw"
+          />
+          <img
+            src={assets.heroBgFallback}
+            alt=""
+            sizes="100vw"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="hero-veil" />
       </div>
 
@@ -56,9 +70,14 @@ export function Hero() {
               <AnimatePresence mode="wait">
                 <motion.img
                   key={plant.id}
-                  className="hero-plant plant-cutout"
-                  src={plant.image}
-                  alt={plant.name}
+                  {...plantImgAttrs({
+                    src: plant.image,
+                    srcSet: plant.imageSrcSet,
+                    sizes: plantSizes.hero,
+                    alt: plant.name,
+                    className: "hero-plant plant-cutout",
+                    priority: true,
+                  })}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
@@ -121,7 +140,14 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.35 }}
           >
             <div className="review-snip-head">
-              <img src={assets.avatarAlena} alt="" width={64} height={64} />
+              <img
+                src={assets.avatarAlena}
+                alt=""
+                width={64}
+                height={64}
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <strong>Alena Patel</strong>
                 <Stars />

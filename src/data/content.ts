@@ -3,22 +3,39 @@ export type Plant = {
   name: string;
   description: string;
   price: number;
+  /** Primary display image (WebP). */
   image: string;
+  /** Responsive WebP srcset for product / section displays. */
+  imageSrcSet: string;
+  /** Tiny WebP for search / cart thumbnails. */
+  thumb: string;
   tag?: string;
 };
 
+/** Build responsive plant image URLs from a public/assets/plants basename. */
+function plantMedia(basename: string) {
+  const base = `/assets/plants/${basename}`;
+  return {
+    image: `${base}.webp`,
+    imageSrcSet: `${base}-480.webp 480w, ${base}.webp 960w`,
+    thumb: `${base}-thumb.webp`,
+  };
+}
+
 export const assets = {
-  heroBg: "/assets/hero-bg.jpg",
+  heroBg: "/assets/hero-bg.webp",
+  heroBgSrcSet: "/assets/hero-bg-800.webp 800w, /assets/hero-bg.webp 1600w",
+  heroBgFallback: "/assets/hero-bg.jpg",
   logo: "/assets/logo-plant.png",
   search: "/assets/icon-search.png",
   bag: "/assets/icon-bag.png",
-  plantHero: "/assets/plants/plant-hero.png",
-  plant1: "/assets/plants/plant-1.png",
-  plant2: "/assets/plants/plant-2.png",
-  plant3: "/assets/plants/plant-3.png",
-  plant4: "/assets/plants/plant-4.png",
-  plant5: "/assets/plants/plant-5.png",
-  plant6: "/assets/plants/plant-6.png",
+  plantHero: plantMedia("plant-hero"),
+  plant1: plantMedia("plant-1"),
+  plant2: plantMedia("plant-2"),
+  plant3: plantMedia("plant-3"),
+  plant4: plantMedia("plant-4"),
+  plant5: plantMedia("plant-5"),
+  plant6: plantMedia("plant-6"),
   avatarAlena: "/assets/avatar-alena.jpg",
   avatarMaxn: "/assets/avatar-maxn.jpg",
   avatarVenely: "/assets/avatar-venely.jpg",
@@ -30,7 +47,7 @@ export const heroFeatured: Plant = {
   name: "Calathea Medallion",
   description: "Trendy House Plant",
   price: 49,
-  image: assets.plantHero,
+  ...assets.plantHero,
   tag: "Trendy House Plant",
 };
 
@@ -41,7 +58,7 @@ export const heroCarousel: Plant[] = [
     name: "Zebra Haworthia",
     description: "Desk Friendly Plant",
     price: 29,
-    image: assets.plant1,
+    ...assets.plant1,
     tag: "Desk Friendly Plant",
   },
   {
@@ -49,7 +66,7 @@ export const heroCarousel: Plant[] = [
     name: "Pot Cactus",
     description: "Statement House Plant",
     price: 59,
-    image: assets.plant3,
+    ...assets.plant3,
     tag: "Statement House Plant",
   },
 ];
@@ -61,7 +78,7 @@ export const trendyPlants: Plant[] = [
     description:
       "A compact speckled succulent in a mint pot. Perfect for desks, bright shelves, and low-water routines.",
     price: 49,
-    image: assets.plant1,
+    ...assets.plant1,
   },
   {
     id: "trendy-2",
@@ -69,7 +86,7 @@ export const trendyPlants: Plant[] = [
     description:
       "Tall, architectural leaves in a clean white bowl. Brings tropical structure to sunny rooms and entryways.",
     price: 39,
-    image: assets.plant3,
+    ...assets.plant3,
   },
 ];
 
@@ -80,7 +97,7 @@ export const topSelling: Plant[] = [
     description:
       "Textured white-dotted leaves with almost no watering fuss. Ideal for desks and windowsills.",
     price: 29,
-    image: assets.plant1,
+    ...assets.plant1,
   },
   {
     id: "top-2",
@@ -88,7 +105,7 @@ export const topSelling: Plant[] = [
     description:
       "A cheerful mint ceramic pot paired with hardy foliage that thrives on bright light.",
     price: 39,
-    image: assets.plant2,
+    ...assets.plant2,
     tag: "large-plant",
   },
   {
@@ -97,7 +114,7 @@ export const topSelling: Plant[] = [
     description:
       "A compact desert cactus in a clean pot. Low water, strong shape, and easy bright-window care.",
     price: 59,
-    image: assets.plant3,
+    ...assets.plant3,
   },
   {
     id: "top-4",
@@ -105,7 +122,7 @@ export const topSelling: Plant[] = [
     description:
       "Fan-like foliage with soft lighting drama. Best in bright, indirect sun.",
     price: 49,
-    image: assets.plant4,
+    ...assets.plant4,
   },
   {
     id: "top-5",
@@ -113,7 +130,7 @@ export const topSelling: Plant[] = [
     description:
       "Deep green spears and a matte white pot for modern living rooms and studios.",
     price: 69,
-    image: assets.plant5,
+    ...assets.plant5,
   },
   {
     id: "top-6",
@@ -121,7 +138,7 @@ export const topSelling: Plant[] = [
     description:
       "Thick pointed leaves in a stone-textured pot. Low care, high presence.",
     price: 39,
-    image: assets.plant6,
+    ...assets.plant6,
   },
 ];
 
@@ -133,7 +150,7 @@ export const bestO2Slides = [
       "Our O2 collection pairs compact footprints with plants known for cleaner, fresher indoor air.",
       "Start with one statement piece, then build a corner that feels calmer every time you walk in.",
     ],
-    image: assets.plantHero,
+    ...assets.plantHero,
   },
   {
     id: "o2-2",
@@ -142,7 +159,7 @@ export const bestO2Slides = [
       "Bring oxygen-rich foliage into compact spaces without sacrificing style or sunlight needs.",
       "Every plant is nursery-selected for resilience, leaf quality, and everyday indoor living.",
     ],
-    image: assets.plant1,
+    ...assets.plant1,
   },
   {
     id: "o2-3",
@@ -151,7 +168,7 @@ export const bestO2Slides = [
       "From succulents to sculptural leaves, each pick balances beauty with realistic care routines.",
       "Explore collections designed for desks, corners, and quiet reading nooks.",
     ],
-    image: assets.plant3,
+    ...assets.plant3,
   },
   {
     id: "o2-4",
@@ -160,7 +177,7 @@ export const bestO2Slides = [
       "Create a natural rhythm at home with plants that soften light and purify the air.",
       "Begin with one favorite — grow a collection that feels like yours.",
     ],
-    image: assets.plant6,
+    ...assets.plant6,
   },
 ];
 

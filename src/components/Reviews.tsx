@@ -21,7 +21,14 @@ export function Reviews() {
               whileHover={{ y: -6 }}
             >
               <div className="review-head">
-                <img src={review.avatar} alt="" width={88} height={88} />
+                <img
+                  src={review.avatar}
+                  alt=""
+                  width={88}
+                  height={88}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div>
                   <h3>{review.name}</h3>
                   <Stars rating={review.rating} />

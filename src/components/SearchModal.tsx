@@ -87,7 +87,14 @@ export function SearchModal({ open, onClose }: Props) {
               {results.map((plant) => (
                 <li key={plant.id}>
                   <button type="button" onClick={() => pick(plant)}>
-                    <img src={plant.image} alt="" />
+                    <img
+                      src={plant.thumb}
+                      alt=""
+                      width={56}
+                      height={74}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <span>
                       <strong>{plant.name}</strong>
                       <em>{formatPrice(plant.price)}</em>

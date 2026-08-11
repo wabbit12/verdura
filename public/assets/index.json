@@ -1,10 +1,11 @@
 {
   "logo-plant": "/assets/logo-plant.png",
-  "plant-hero": "/assets/plants/plant-hero.png",
-  "plant-1": "/assets/plants/plant-1.png",
-  "plant-2": "/assets/plants/plant-2.png",
-  "plant-3": "/assets/plants/plant-3.png",
-  "plant-4": "/assets/plants/plant-4.png",
-  "plant-5": "/assets/plants/plant-5.png",
-  "plant-6": "/assets/plants/plant-6.png"
+  "hero-bg": "/assets/hero-bg.webp",
+  "plant-hero": "/assets/plants/plant-hero.webp",
+  "plant-1": "/assets/plants/plant-1.webp",
+  "plant-2": "/assets/plants/plant-2.webp",
+  "plant-3": "/assets/plants/plant-3.webp",
+  "plant-4": "/assets/plants/plant-4.webp",
+  "plant-5": "/assets/plants/plant-5.webp",
+  "plant-6": "/assets/plants/plant-6.webp"
 }

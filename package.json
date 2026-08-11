@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "assets:download": "node scripts/download-assets.mjs",
     "assets:from-urls": "node scripts/download-assets-from-urls.mjs",
-    "assets:remove-bg": "node scripts/remove-plant-bg.mjs"
+    "assets:remove-bg": "node scripts/remove-plant-bg.mjs",
+    "assets:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.43.0",

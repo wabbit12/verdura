@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { bestO2Slides } from "../data/content";
+import { PlantImage, plantSizes } from "./PlantImage";
 import { SectionTitle } from "./SectionTitle";
 import "./BestO2.css";
 
@@ -28,7 +29,13 @@ export function BestO2() {
               transition={{ duration: 0.35 }}
             >
               <div className="o2-media">
-                <img className="plant-cutout" src={slide.image} alt="" />
+                <PlantImage
+                  className="plant-cutout"
+                  src={slide.image}
+                  srcSet={slide.imageSrcSet}
+                  sizes={plantSizes.o2}
+                  alt=""
+                />
               </div>
               <div className="o2-copy">
                 <h3>{slide.title}</h3>

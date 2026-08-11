@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { formatPrice, trendyPlants, type Plant } from "../data/content";
 import { useCart } from "../hooks/useCart";
 import { BagIcon } from "./Icons";
+import { PlantImage, plantSizes } from "./PlantImage";
 import { SectionTitle } from "./SectionTitle";
 import "./TrendyPlants.css";
 
@@ -23,7 +24,13 @@ function TrendyCard({
       transition={{ duration: 0.55 }}
     >
       <div className="trendy-media">
-        <img className="plant-cutout" src={plant.image} alt={plant.name} />
+        <PlantImage
+          className="plant-cutout"
+          src={plant.image}
+          srcSet={plant.imageSrcSet}
+          sizes={plantSizes.trendy}
+          alt={plant.name}
+        />
       </div>
       <div className="trendy-body">
         <h3>{plant.name}</h3>

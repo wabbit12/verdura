@@ -43,7 +43,14 @@ export function CartDrawer() {
               <ul className="cart-list">
                 {items.map((item) => (
                   <li key={item.id}>
-                    <img src={item.image} alt="" />
+                    <img
+                      src={item.thumb}
+                      alt=""
+                      width={72}
+                      height={96}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div>
                       <h3>{item.name}</h3>
                       <p>{formatPrice(item.price)}</p>

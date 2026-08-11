@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { formatPrice, topSelling, type Plant } from "../data/content";
 import { useCart } from "../hooks/useCart";
 import { BagIcon } from "./Icons";
+import { PlantImage, plantSizes } from "./PlantImage";
 import { SectionTitle } from "./SectionTitle";
 import "./TopSelling.css";
 
@@ -18,7 +19,13 @@ function ProductCard({ plant, index }: { plant: Plant; index: number }) {
       whileHover={{ y: -8 }}
     >
       <div className="product-media">
-        <img className="plant-cutout" src={plant.image} alt={plant.name} />
+        <PlantImage
+          className="plant-cutout"
+          src={plant.image}
+          srcSet={plant.imageSrcSet}
+          sizes={plantSizes.product}
+          alt={plant.name}
+        />
       </div>
       <div className="product-body">
         <h3>{plant.name}</h3>
