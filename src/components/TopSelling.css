@@ -49,7 +49,7 @@
 .product-card.is-large-plant .product-media img {
   width: min(100%, 360px);
   height: 520px;
-  bottom: 8.5rem;
+  bottom: 11rem;
 }
 
 .product-card.is-large-plant:hover .product-media img {
@@ -148,10 +148,16 @@
     transform: translateX(-50%);
   }
 
+  .product-card.is-large-plant .product-media {
+    height: 200px;
+    margin-top: -3.25rem;
+    margin-bottom: 0;
+  }
+
   .product-card.is-large-plant .product-media img {
-    width: min(78%, 230px);
-    height: 310px;
-    bottom: 0;
+    width: min(95%, 290px);
+    height: 340px;
+    bottom: -2.25rem;
   }
 
   .product-card:hover .product-media img,
@@ -180,12 +186,14 @@
   .product-grid {
     display: flex;
     grid-template-columns: none;
+    align-items: stretch;
     gap: 1rem;
     max-width: none;
     margin-inline: -1.25rem;
-    padding: 2.75rem 1.25rem 1.25rem;
+    /* Room for plant cutouts; overflow-x:auto forces Y clipping */
+    padding: 13rem 1.25rem 1.25rem;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 1.25rem;
@@ -201,21 +209,30 @@
     flex: 0 0 min(78vw, 300px);
     scroll-snap-align: center;
     padding: 0 1.15rem 1.15rem;
+    overflow: visible;
   }
 
   .product-media {
-    height: 150px;
-    margin-top: -2.75rem;
+    height: 190px;
+    margin-top: -9.5rem;
+    overflow: visible;
   }
 
   .product-media img {
-    width: min(65%, 180px);
-    height: 250px;
+    width: min(68%, 190px);
+    height: 260px;
+  }
+
+  .product-card.is-large-plant .product-media {
+    height: 190px;
+    margin-top: -8.25rem;
+    margin-bottom: 0;
   }
 
   .product-card.is-large-plant .product-media img {
-    width: min(72%, 200px);
-    height: 280px;
+    width: min(98%, 280px);
+    height: 290px;
+    bottom: -2rem;
   }
 
   .product-body h3 {
@@ -226,6 +243,7 @@
     font-size: 0.9rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
